@@ -46,20 +46,38 @@ recommender-lab/
 ├── tests/                # 测试
 ├── models/               # 模型权重
 ├── logs/                 # 训练与实验日志
-├── requirements.txt
+├── notes/                # 学习笔记与错题日志
+├── requirements.txt      # pip 依赖
+├── environment.yml       # conda 环境
 └── README.md
 ```
 
 ## 快速开始
 
+方式一（pip）：
+
 ```bash
 pip install -r requirements.txt
+```
 
+方式二（conda，推荐）：
+
+```bash
+conda env create -f environment.yml
+conda activate recommender-lab
+```
+
+然后：
+
+```bash
 # 下载 ml-1m.zip 并解压到 data/raw/ml-1m/
 python src/data_prep.py
 
 # 手撕题自测
 python algorithms/leetcode_01_two_sum.py
+
+# 环境自检
+python src/test_environment.py
 ```
 
 ## 实验记录

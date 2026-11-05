@@ -186,22 +186,51 @@ def part_5_exceptions() -> None:
 
 def exercise_1_dedupe(items):
     """练习 1：对列表去重并保持原顺序。"""
-    raise NotImplementedError("自己实现，再对照 _answers.exercise_1")
+    # raise NotImplementedError("自己实现，再对照 _answers.exercise_1")
+
+    # result = []
+    # for item in items:
+    #     if item not in result:
+    #         result.append(item)
+    # return result
+
+    return list(dict.fromkeys(items))
 
 
 def exercise_2_safe_divide(a, b):
     """练习 2：安全相除，除数为 0 时返回 None。"""
-    raise NotImplementedError("自己实现，再对照 _answers.exercise_2")
+    if b == 0:
+        return None
+    return a / b
+    
+    # try:
+    #     return a / b
+    # except ZeroDivisionError:
+    #     return None
+
+    # raise NotImplementedError("自己实现，再对照 _answers.exercise_2")
 
 
 def exercise_3_word_count(text):
     """练习 3：统计字符串中每个单词出现次数，返回 dict。"""
-    raise NotImplementedError("自己实现，再对照 _answers.exercise_3")
-
+    # raise NotImplementedError("自己实现，再对照 _answers.exercise_3")
+    counts = {}
+    for word in text.split():
+        counts[word] = counts.get(word, 0) + 1
+    return counts
 
 def exercise_4_movie():
     """练习 4：定义一个 Movie 类，含 title/rating 属性和 is_good() 方法（rating>=4 返回 True）。"""
-    raise NotImplementedError("自己实现，再对照 _answers.exercise_4")
+    # raise NotImplementedError("自己实现，再对照 _answers.exercise_4")
+    class Movie:
+        def __init__(self, title, rating):
+            self.title = title
+            self.rating = rating
+
+        def is_good(self):
+            return self.rating >= 4
+
+    return Movie
 
 
 class _answers:

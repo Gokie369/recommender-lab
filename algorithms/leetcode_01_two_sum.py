@@ -35,8 +35,14 @@ def two_sum(nums: List[int], target: int) -> List[int]:
 
 def two_sum_practice(nums: List[int], target: int) -> List[int]:
     # TODO: 闭卷复写两数之和的哈希表解法
-    raise NotImplementedError("先自己写，写不出来再对照上面的实现")
-
+    # raise NotImplementedError("先自己写，写不出来再对照上面的实现")
+    seen = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if  complement in seen:
+            return [seen(complement), i]
+        seen[num] = i
+    return []
 
 def _run_tests():
     cases = [
